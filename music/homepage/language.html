@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Language - Music Vibes</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #181818;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #1DB954;
+        }
+
+        .language-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .language-card {
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            padding: 15px 30px;
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .language-card:hover {
+            background-color: #1DB954;
+            transform: scale(1.1);
+        }
+
+        .hidden-input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select Your Language</h1>
+    <div class="language-container">
+        <!-- Language Options -->
+        <div class="language-card" onclick="redirectToSongs('happy', 'Telugu')">Telugu</div>
+        <div class="language-card" onclick="redirectToSongs('happy', 'hindi')">Hindi</div>
+        <div class="language-card" onclick="redirectToSongs('happy', 'English')">English</div>
+        <div class="language-card" onclick="redirectToSongs('happy', 'Tamil')">Tamil</div>
+        <div class="language-card" onclick="redirectToSongs('happy', 'Malyalam')">Malyalam</div>
+    <script>
+       
+        function redirectToSongs(mood, language) {
+            const url = `${mood}_${language}.html`;
+            alert(`Redirecting to ${language} ${mood} songs page...`);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

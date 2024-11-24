@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending - Music Vibes</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #181818;
+        }
+        .navbar .logo {
+            color: #1DB954;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .navbar .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+        }
+        .navbar .nav-links a:hover {
+            color: #1DB954;
+        }
+        .container {
+            padding: 30px;
+        }
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .trending-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: #282828;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .card .card-title {
+            font-size: 16px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" class="logo">Music Vibes</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="trending.html">Trending</a>
+            <a href="library.html">Library</a>
+            <a href="profile.html">Profile</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="section-title">Trending Now</h1>
+        <div class="trending-grid">
+            <div class="card">
+                <img src="images\top hits.jpg" alt="Album Cover">
+                <div class="card-title">Top Hits</div>
+            </div>
+            <div class="card">
+                <img src="images\chill 2.jpg" alt="Album Cover">
+                <div class="card-title">Chill Vibes</div>
+            </div>
+            <div class="card">
+                <img src="images\pop.jpg" alt="Album Cover">
+                <div class="card-title">Pop Essentials</div>
+            </div>
+            <div class="card">
+                <img src="images\rock.png" alt="Album Cover">
+                <div class="card-title">Rock Classics</div>
+            </div>
+            <div class="card">
+                <img src="images\party mix.png" alt="Album Cover">
+                <div class="card-title">Party Mix</div>
+            </div>
+            <div class="card">
+                <img src="images\rap.jpg" alt="Album Cover">
+                <div class="card-title">Rap Godz</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                alert('Redirecting to playlist...');
+            });
+        });
+    </script>
+</body>
+</html>

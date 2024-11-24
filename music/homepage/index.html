@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Mood Selector</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body and Container Styling */
+        body {
+            background-color: #121212;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Header Styling */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            background-color: #181818;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1DB954;
+        }
+
+        .header .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .header .nav-links a:hover {
+            opacity: 1;
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        /* Mood Cards Container */
+        .mood-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        /* Mood Card Styling */
+        .mood-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .mood-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mood-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Mood Card Overlay */
+        .mood-card .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .mood-card:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay h3 {
+            font-size: 1.2rem;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo"></div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="trending.html">Trending</a>
+            <a href="library.html">Library</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="main-content">
+        <h1>Choose Your Mood</h1>
+        <div class="mood-cards">
+            <!-- Happy Mood Card -->
+            <div class="mood-card" onclick="redirectToMoodPage('language')">
+                <img src="images\happy.jpg" alt="Happy Mood">
+                <div class="overlay">
+                    <h3>Happy</h3>
+                </div>
+            </div>
+
+            <!-- Calm Mood Card -->
+            <div class="mood-card" onclick="redirectToMoodPage('language')">
+                <img src="images\calm.png" alt="Calm Mood">
+                <div class="overlay">
+                    <h3>Calm</h3>
+                </div>
+            </div>
+
+            <!-- Energetic Mood Card -->
+            <div class="mood-card" onclick="redirectToMoodPage('language')">
+                <img src="images\energetic.jpg" alt="Energetic Mood">
+                <div class="overlay">
+                    <h3>Energetic</h3>
+                </div>
+            </div>
+
+            <!-- Sad Mood Card -->
+            <div class="mood-card" onclick="redirectToMoodPage('language')">
+                <img src="images\sad.jpg" alt="Sad Mood">
+                <div class="overlay">
+                    <h3>Sad</h3>
+                </div>
+            </div>
+
+            <!-- Romantic Mood Card -->
+            <div class="mood-card" onclick="redirectToMoodPage('language')">
+                <img src="images\romantic.jpg" alt="Romantic Mood">
+                <div class="overlay">
+                    <h3>Romantic</h3>
+                </div>
+            </div>
+
+            <!-- Party Mood Card -->
+            <div class="mood-card" onclick="redirectToMoodPage('language')">
+                <img src="images\party.jpg" alt="Party Mood">
+                <div class="overlay">
+                    <h3>Party</h3>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- JavaScript for Redirection -->
+    <script>
+        function redirectToMoodPage(mood) {
+            // Redirect to the respective mood page
+            window.location.href = `${mood}.html`; // Ensure your calm.html, happy.html, etc., exist
+        }
+    </script>
+</body>
+</html>

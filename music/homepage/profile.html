@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Music Vibes</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #181818;
+        }
+        .navbar .logo {
+            color: #1DB954;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .navbar .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+        }
+        .navbar .nav-links a:hover {
+            color: #1DB954;
+        }
+        .profile-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #181818;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .profile-header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .profile-details h2 {
+            margin: 0;
+            font-size: 26px;
+        }
+        .profile-details p {
+            color: #b3b3b3;
+            margin: 5px 0;
+        }
+        .section-title {
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .playlist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: #282828;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .card .card-title {
+            font-size: 16px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" class="logo">Music Vibes</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="trending.html">Trending</a>
+            <a href="library.html">Library</a>
+            <a href="profile.html">Profile</a>
+        </div>
+    </div>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="profile.jpg" alt="Profile Picture">
+            <div class="profile-details">
+                <h2>User Name</h2>
+                <p>Premium Member</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Your Playlists</h2>
+        <div class="playlist-grid">
+            <div class="card">
+                <img src="images\beats.jpg" alt="Playlist Cover">
+                <div class="card-title">Chill Beats</div>
+            </div>
+            <div class="card">
+                <img src="workout.png" alt="Playlist Cover">
+                <div class="card-title">Workout Mix</div>
+            </div>
+            <div class="card">
+                <img src="jazz.jpg" alt="Playlist Cover">
+                <div class="card-title">Evening Jazz</div>
+            </div>
+            <div class="card">
+                <img src="images\50.png" alt="Playlist Cover">
+                <div class="card-title">Top 50 Hits</div>
+            </div>
+            <div class="card">
+                <img src="indie.png" alt="Playlist Cover">
+                <div class="card-title">Indie Favorites</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                alert('Opening playlist...');
+            });
+        });
+    </script>
+</body>
+</html>

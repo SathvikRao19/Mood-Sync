@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calm Music - Music Vibes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #181818;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #000;
+        }
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1DB954;
+        }
+        .header .nav a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+        }
+        .header .nav a:hover {
+            color: #1DB954;
+        }
+        .container {
+            padding: 20px;
+        }
+        .song-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .song {
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            width: 200px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+        }
+        .song img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .song .title {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #fff;
+        }
+        .song .artist {
+            font-size: 14px;
+            color: #a1a1a1;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Music Vibes</div>
+        <div class="nav">
+            <a href="index.html">Home</a>
+            <a href="#">Trending</a>
+            <a href="#">Library</a>
+            <a href="#">Profile</a>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Feel Good Music</h1>
+        <div class="song-list">
+            <!-- Songs will be dynamically added here -->
+        </div>
+    </div>
+
+    <script>
+        // Updated data for "Calm" songs
+        const calmSongs = [
+            {
+                title: "Hoyna Hoyna",
+                artist: "Anirudh Ravichander",
+                image: "happy img/Gang-Leader.jpg"
+            },
+            {
+                title: "Sa Ri Ma Pa",
+                artist: "Jakes Bejoy",
+                image: "happy img/movie.jpg"
+            },
+            {
+                title: "Hey Rangule",
+                artist: "Anirudh Ravichander",
+                image: "happy img/Hey.jpg"
+            },
+            {
+                title: "Samajavaragamana",
+                artist: "Sid Sriram",
+                image: "happy img/Ala.jpg"
+            },
+            {
+                title: "Undiporaadhey",
+                artist: "Sid Sriram",
+                image: "happy img/Hushaaru.jpg"
+            },
+            {
+                title: "Urike Urike",
+                artist: "M.M. Sreelekha",
+                image: "happy img/hit.jpg"
+            }
+        ];
+
+        // Populate the song list dynamically
+        const songList = document.querySelector('.song-list');
+        calmSongs.forEach(song => {
+            const songDiv = document.createElement('div');
+            songDiv.classList.add('song');
+            songDiv.innerHTML = `
+                <img src="${song.image}" alt="${song.title}">
+                <div class="title">${song.title}</div>
+                <div class="artist">${song.artist}</div>
+            `;
+            songList.appendChild(songDiv);
+        });
+    </script>
+</body>
+</html>
